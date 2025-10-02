@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS-DOS - Consultora Mentores</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+
+    <header class="page-header">
+        <div class="header-content">
+            <div class="header-nav">
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Volver al inicio</span>
+                </a>
+            </div>
+            <div class="logo-section">
+                <div class="header-text">
+                    <h1>CAPÍTULO I: MS-DOS</h1>
+                    <p class="chapter-subtitle">Consultora Mentores - Comandos y Soluciones de Excelencia</p>
+                </div>
+            </div>
+            
+            <div class="author-section">
+                <div class="author-info">
+                    <h3>Ing. Jhoel Mauricio Legua Villegas</h3>
+                    <p>Docente Academia</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+
+        <div class="problemas-grid">
+            <div class="problema">
+                <h2>Problema 1</h2>
+                <p>¿Cuál es el comando en DOS para mostrar todos los archivos que tengan de 1 a 4 caracteres de forma paginada?</p>
+                <h3>Solución</h3>
+                <code>dir ????.* /p</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>dir</code> lista el contenido de un directorio. El signo de interrogación <code>?</code> actúa como comodín para un solo carácter. Al usar <code>????.*</code>, se buscan archivos con nombres de hasta cuatro caracteres y cualquier extensión. El parámetro <code>/p</code> hace que la salida se muestre página por página.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 2</h2>
+                <p>¿Cuál es el comando DOS para listar solo directorios de la unidad de D: y ordenados alfabéticamente por nombre de carpeta?</p>
+                <h3>Solución</h3>
+                <code>dir D:\ /ad /on</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>dir D:\</code> especifica que se liste el contenido de la unidad D:. El parámetro <code>/ad</code> filtra la salida para mostrar únicamente los directorios. Finalmente, <code>/on</code> ordena los resultados alfabéticamente por nombre.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 3</h2>
+                <p>¿Qué hace el siguiente comando: <code>attrib +r D:\COM-99\COLEGIO\COMPUTACIÓN\*.php</code>?</p>
+                <h3>Solución</h3>
+                <p>Establece el atributo de solo lectura a todos los archivos con extensión .php que se encuentran en la ruta especificada.</p>
+                <h3>Explicación</h3>
+                <p>El comando <code>attrib</code> modifica los atributos de los archivos. El signo <code>+</code> añade un atributo, y la <code>r</code> corresponde al de "solo lectura" (read-only). Esto protege a los archivos de ser modificados o eliminados.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 4</h2>
+                <p>¿Cuál es el comando para buscar exactamente la cadena “Cesar” en todos los archivos con extensión .txt de una carpeta?</p>
+                <h3>Solución</h3>
+                <code>find "Cesar" *.txt</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>find</code> busca una cadena de texto específica dentro de uno o más archivos. La cadena a buscar se especifica entre comillas. <code>*.txt</code> indica que la búsqueda se debe realizar en todos los archivos que tengan la extensión .txt en el directorio actual.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 5</h2>
+                <p>¿Cuál es el comando para buscar exactamente la cadena “informe” en todos los archivos con extensión .txt de una carpeta?</p>
+                <h3>Solución</h3>
+                <code>find "informe" *.txt</code>
+                <h3>Explicación</h3>
+                <p>De manera similar al caso anterior, el comando <code>find</code> se utiliza para localizar la cadena "informe" dentro de todos los archivos con extensión .txt del directorio actual.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 6</h2>
+                <p>Escriba los comandos necesarios para realizar lo siguiente:</p>
+                <ul>
+                    <li>a) Limpiar la pantalla.</li>
+                    <li>b) Mostrar la fecha y hora del sistema.</li>
+                    <li>c) Mostrar la versión del sistema operativo.</li>
+                    <li>d) Mostrar la etiqueta del volumen de la unidad C:\</li>
+                </ul>
+                <h3>Solución</h3>
+                <p>a) <code>cls</code></p>
+                <p>b) <code>date</code> y luego <code>time</code></p>
+                <p>c) <code>ver</code></p>
+                <p>d) <code>vol C:</code></p>
+                <h3>Explicación</h3>
+                <ul>
+                    <li>a) <code>cls</code> (Clear Screen) borra todo el contenido de la pantalla de la consola.</li>
+                    <li>b) <code>date</code> muestra la fecha actual y permite cambiarla, mientras que <code>time</code> hace lo propio con la hora.</li>
+                    <li>c) <code>ver</code> (Version) muestra la versión del sistema operativo MS-DOS que se está ejecutando.</li>
+                    <li>d) <code>vol</code> (Volume) muestra la etiqueta del volumen y el número de serie del disco especificado.</li>
+                </ul>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 7</h2>
+                <p>En DOS escriba el comando para listar ordenadamente por tamaño de forma descendente todos los archivos y directorios cuyos nombres empiecen con la letra d.</p>
+                <h3>Solución</h3>
+                <code>dir d* /o-s</code>
+                <h3>Explicación</h3>
+                <p><code>dir d*</code> lista todos los archivos y directorios que comienzan con la letra 'd'. El parámetro <code>/o</code> se usa para ordenar, y el sufijo <code>-s</code> indica que el ordenamiento será por tamaño (size) de forma descendente (el guion invierte el orden).</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 8</h2>
+                <p>¿Cuál es el comando en DOS para mostrar todos los archivos que tengan de 1 a 4 caracteres de forma paginada?</p>
+                <h3>Solución</h3>
+                <code>dir ????.* /p</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>dir</code> lista el contenido de un directorio. El signo de interrogación <code>?</code> es un comodín para un solo carácter. <code>????.*</code> busca archivos con nombres de hasta cuatro caracteres y cualquier extensión. El parámetro <code>/p</code> pausa la visualización cada vez que la pantalla se llena.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 9</h2>
+                <p>¿Cuál es el comando DOS para listar solo directorios de la unidad de D: y ordenados alfabéticamente por nombre de carpeta?</p>
+                <h3>Solución</h3>
+                <code>dir D:\ /ad /on</code>
+                <h3>Explicación</h3>
+                <p><code>dir D:\</code> indica la unidad a listar. El parámetro <code>/ad</code> filtra para mostrar solo directorios (Attribute: Directory). El parámetro <code>/on</code> ordena los resultados por nombre (Order by: Name).</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 10</h2>
+                <p>¿Qué hace el siguiente comando: <code>more pmd_pdf.php /c</code>?</p>
+                <h3>Solución</h3>
+                <p>Muestra el contenido del archivo <code>pmd_pdf.php</code> página por página, limpiando la pantalla antes de mostrar cada nueva página.</p>
+                <h3>Explicación</h3>
+                <p>El comando <code>more</code> se utiliza para mostrar el contenido de un archivo de forma paginada. El parámetro <code>/c</code> (clear) tiene la particularidad de limpiar la pantalla antes de visualizar cada página del contenido.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 11</h2>
+                <p>Determinar las instrucciones correctas para listar los archivos con nombres de 5 caracteres y de extensión word.</p>
+                <h3>Solución</h3>
+                <code>dir ?????.doc</code>
+                <h3>Explicación</h3>
+                <p>Se utiliza el comando <code>dir</code>. Los cinco signos de interrogación <code>?????</code> actúan como comodines para cualquier nombre de archivo que tenga exactamente cinco caracteres. <code>.doc</code> era la extensión estándar para documentos de Word en la era de MS-DOS.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 12</h2>
+                <p>Determinar las instrucciones correctas para listar los archivos con nombres de 5 caracteres y que tengan la extensión de dos caracteres.</p>
+                <h3>Solución</h3>
+                <code>dir ?????.??</code>
+                <h3>Explicación</h3>
+                <p>Nuevamente, <code>?????</code> especifica un nombre de archivo de cinco caracteres. Los dos signos de interrogación en la extensión <code>.??</code> indican que se buscan archivos cuya extensión tenga exactamente dos caracteres.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 13</h2>
+                <p>¿Cuál es el comando que permite modificar el contenido de un archivo de texto?</p>
+                <h3>Solución</h3>
+                <code>edit nombre_archivo.txt</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>edit</code> abre el editor de texto de MS-DOS a pantalla completa, permitiendo crear o modificar archivos de texto de una manera más amigable que la línea de comandos.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 14</h2>
+                <p>Para ver el contenido de un directorio y el de los directorios internos ¿qué comando se utiliza?</p>
+                <h3>Solución</h3>
+                <code>dir /s</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>dir</code> con el parámetro <code>/s</code> (subdirectories) lista todos los archivos y directorios del directorio actual y de todos sus subdirectorios de forma recursiva.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 15</h2>
+                <p>¿Qué acción realiza la siguiente instrucción <code>type PRUEBA.TXT >>LPT1</code>?</p>
+                <h3>Solución</h3>
+                <p>Envía el contenido del archivo <code>PRUEBA.TXT</code> al puerto de la impresora (LPT1) para ser impreso.</p>
+                <h3>Explicación</h3>
+                <p>El comando <code>type</code> muestra el contenido de un archivo. El operador de redirección <code>>></code> añade la salida a un archivo o dispositivo. <code>LPT1</code> es el nombre reservado para el primer puerto de impresora paralelo. En esencia, este comando imprime el archivo.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 16</h2>
+                <p>¿Cuál es el significado de MS-DOS?</p>
+                <h3>Solución</h3>
+                <p>Microsoft Disk Operating System (Sistema Operativo de Disco de Microsoft).</p>
+                <h3>Explicación</h3>
+                <p>MS-DOS fue un sistema operativo de línea de comandos desarrollado por Microsoft, que fue el estándar para las computadoras personales compatibles con IBM PC durante las décadas de 1980 y 1990.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 17</h2>
+                <p>¿Cuál es el comando correcto para copiar todos los archivos con la extensión .txt en un solo archivo llamado LIBRO.txt?</p>
+                <h3>Solución</h3>
+                <code>copy *.txt LIBRO.txt</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>copy</code> se utiliza para copiar archivos. <code>*.txt</code> selecciona todos los archivos con la extensión .txt. Al especificar un nombre de archivo como destino, el comando concatena (une) el contenido de todos los archivos de origen en ese único archivo de destino.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 18</h2>
+                <p>¿Cuál es el comodín para sustituir a un nombre?</p>
+                <h3>Solución</h3>
+                <p>El asterisco <code>*</code>.</p>
+                <h3>Explicación</h3>
+                <p>El asterisco <code>*</code> es un comodín que representa cualquier número de caracteres (de cero a varios) en un nombre de archivo o extensión. Por ejemplo, <code>C*.*</code> se refiere a todos los archivos que empiezan con la letra C.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 19</h2>
+                <p>¿Cuál es el comando correcto para crear un archivo TOTAL.TXT que contiene los contenidos de los archivos SOFT.TXT y HARD.TXT que se encuentran en la raíz de la unidad D:?</p>
+                <h3>Solución</h3>
+                <code>copy D:\SOFT.TXT + D:\HARD.TXT D:\TOTAL.TXT</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>copy</code> puede utilizar el signo <code>+</code> para concatenar (unir) varios archivos en uno solo. En este caso, se indica que se copie el contenido de <code>D:\SOFT.TXT</code> más el contenido de <code>D:\HARD.TXT</code> en un nuevo archivo de destino llamado <code>D:\TOTAL.TXT</code>.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 20</h2>
+                <p>¿Cuál es el comando correcto para crear un archivo TOTAL.TXT que contiene los contenidos de los archivos SOFT.TXT y HARD.TXT que se encuentran en la raíz de la unidad D:?</p>
+                <h3>Solución</h3>
+                <code>copy D:\SOFT.TXT + D:\HARD.TXT D:\TOTAL.TXT</code>
+                <h3>Explicación</h3>
+                <p>Este problema es idéntico al anterior. Se utiliza el comando <code>copy</code> con el signo <code>+</code> para combinar los dos archivos de origen (<code>D:\SOFT.TXT</code> y <code>D:\HARD.TXT</code>) en un único archivo de destino (<code>D:\TOTAL.TXT</code>).</p>
+            </div>
+
+               <div class="problema">
+                <h2>Problema 21</h2>
+                <p>Elabora el siguiente árbol de directorio y resuelve las preguntas.</p>
+                <p><strong>Inciso a)</strong> Mostrar toda la información del directorio PREFAS ordenado por fecha.</p>
+                <h3>Solución</h3>
+                <code>dir PREFAS /od</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>dir PREFAS</code> lista el contenido del directorio especificado. El parámetro <code>/o</code> se usa para ordenar, y la letra <code>d</code> indica que el criterio de ordenación es la fecha y hora, de la más antigua a la más reciente.</p>
+
+                <p><strong>Inciso b)</strong> Eliminar el directorio MAT99.</p>
+                <h3>Solución</h3>
+                <code>
+    rd MAT99\CARPETA
+    rd MAT99
+                </code>
+                <p>O usando un comando más potente (no disponible en todas las versiones de MS-DOS):</p>
+                <code>deltree /y MAT99</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>rd</code> (o <code>rmdir</code>) solo puede eliminar directorios que están completamente vacíos. Dado que MAT99 contiene la carpeta CARPETA, primero se debe eliminar el contenido (<code>rd MAT99\CARPETA</code>) y luego el directorio padre (<code>rd MAT99</code>). El comando <code>deltree</code> es más directo, ya que elimina un directorio y todo su contenido, incluyendo subdirectorios. La opción <code>/y</code> confirma la eliminación sin pedir confirmación.</p>
+
+                <p><strong>Inciso c)</strong> Crear 3 archivos vacíos con los nombres arch1.txt, arch2.dat, arch3.sh.</p>
+                <h3>Solución</h3>
+                <code>
+    type nul > arch1.txt
+    type nul > arch2.dat
+    type nul > arch3.sh
+                </code>
+                <h3>Explicación</h3>
+                <p>El comando <code>type nul</code> no produce ninguna salida. El operador de redirección <code>></code> envía esa "nada" a un archivo. Si el archivo no existe, lo crea. Esto resulta en la creación de un archivo de 0 bytes, es decir, un archivo vacío.</p>
+
+                <p><strong>Inciso d)</strong> Crear un archivo datos.dat con el contenido: dat1, dat2, dat3 y otro archivo datos2.txt con el contenido: r1, r2, r3. Enviar el contenido del archivo datos.dat al final del archivo datos2.txt.</p>
+                <h3>Solución</h3>
+                <code>
+    echo dat1, dat2, dat3 > datos.dat
+    echo r1, r2, r3 > datos2.txt
+    type datos.dat >> datos2.txt
+                </code>
+                <h3>Explicación</h3>
+                <ol>
+                    <li><code>echo [texto] > [archivo]</code> crea un nuevo archivo con el texto especificado.</li>
+                    <li><code>type [archivo_origen]</code> muestra el contenido de un archivo.</li>
+                    <li>El operador de redirección <code>>></code> (doble mayor que) se utiliza para anexar (agregar al final) la salida de un comando a un archivo existente sin sobreescribir su contenido original.</li>
+                </ol>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 22</h2>
+                <p>Cree la siguiente estructura de directorios en la unidad D:\.</p>
+                <h3>Solución</h3>
+                <code>
+                    D:
+                    md COM99
+                    md COM99\APLIC
+                    md COM99\SO
+                    md COM99\VARIOS
+                    md COM99\APLIC\WORD
+                    md COM99\APLIC\ACCESS
+                    md COM99\APLIC\EXCEL
+                    md COM99\APLIC\WORD\TEXTO
+                    md COM99\APLIC\WORD\NOTAS
+                    md COM99\APLIC\EXCEL\TABLAS
+                    md COM99\APLIC\EXCEL\GRAFICOS
+                    md COM99\SO\DOS
+                    md COM99\SO\LINUX
+                    md COM99\SO\WINDOWS
+                </code>
+                <h3>Explicación</h3>
+                <p>El comando <code>md</code> (o <code>mkdir</code>, Make Directory) se utiliza para crear un nuevo directorio. Se debe especificar la ruta completa donde se desea crear cada nueva carpeta para construir la estructura de árbol requerida.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 23</h2>
+                <p>¿En el MS-DOS para qué sirve <code>date</code>?</p>
+                <h3>Solución</h3>
+                <p>Sirve para mostrar la fecha actual del sistema y, opcionalmente, para establecer una nueva fecha.</p>
+                <h3>Explicación</h3>
+                <p>Al ejecutar el comando <code>date</code>, la consola muestra la fecha actual y solicita al usuario que ingrese una nueva. Si el usuario simplemente presiona la tecla "Enter", la fecha actual se mantiene sin cambios.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 24</h2>
+                <p>¿En el MS-DOS para qué sirve <code>sort</code>?</p>
+                <h3>Solución</h3>
+                <p>Sirve para ordenar líneas de texto de una entrada de datos (usualmente un archivo) y mostrar el resultado ordenado en la pantalla.</p>
+                <h3>Explicación</h3>
+                <p><code>sort</code> es un comando de filtro que lee datos, los ordena alfabéticamente (o numéricamente) línea por línea, y luego escribe el resultado en la salida estándar. Por ejemplo, <code>sort < miarchivo.txt</code> mostraría las líneas de "miarchivo.txt" ordenadas alfabéticamente.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 25</h2>
+                <p>Crear la siguiente estructura de directorios en la unidad C:\, verificar visualizando en forma gráfica.</p>
+                <h3>Solución</h3>
+                <p><strong>Creación de la estructura:</strong></p>
+                <code>
+                    C:
+                    md prefas
+                    md prefas\mate
+                    md prefas\fisica
+                    md prefas\com99
+                    md prefas\com99\dos
+                    md prefas\com99\linux
+                    md prefas\com99\html
+                </code>
+                <p><strong>Verificación gráfica:</strong></p>
+                <code>tree c:\prefas</code>
+                <h3>Explicación</h3>
+                <p>Se utiliza una serie de comandos <code>md</code> para crear cada uno de los directorios. Para la verificación, el comando <code>tree</code> es la herramienta ideal, ya que muestra la estructura de carpetas a partir de una ruta específica en un formato de árbol visualmente fácil de entender.</p>
+
+                <p><strong>Inciso a)</strong> Crear el archivo de texto empleado.txt dentro del subdirectorio fisica.</p>
+                <h3>Solución</h3>
+                <code>echo. > c:\prefas\fisica\empleado.txt</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>echo.</code> seguido del operador de redirección <code>></code> es una forma rápida de crear un archivo de texto vacío en la ruta especificada.</p>
+
+                <p><strong>Inciso b)</strong> Copiar los archivos que termine con la letra “o” en el nombre y la extensión sea ‘txt’, del directorio fisica al directorio com99.</p>
+                <h3>Solución</h3>
+                <code>copy c:\prefas\fisica\*o.txt c:\prefas\com99</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>copy</code> se usa para duplicar archivos. <code>*o.txt</code> es el patrón de búsqueda: el asterisco <code>*</code> es un comodín que representa cualquier cantidad de caracteres, por lo que <code>*o.txt</code> se traduce como "cualquier archivo cuyo nombre termine en 'o' y tenga la extensión .txt". El segundo parámetro es la carpeta de destino.</p>
+
+                <p><strong>Inciso c)</strong> Establecer los atributos de solo lectura y oculto al archivo empleado.txt del directorio c:\prefas\fisica.</p>
+                <h3>Solución</h3>
+                <code>attrib +r +h c:\prefas\fisica\empleado.txt</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>attrib</code> gestiona los atributos de los archivos. El signo <code>+</code> se usa para añadir un atributo. <code>+r</code> activa el atributo de solo lectura (Read-only) y <code>+h</code> activa el atributo de oculto (Hidden).</p>
+
+                <p><strong>Inciso d)</strong> Buscar a los empleados que son de “tarija” del archivo empleado.txt.</p>
+                <h3>Solución</h3>
+                <code>find "tarija" c:\prefas\fisica\empleado.txt</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>find</code> busca una cadena de texto exacta (sensible a mayúsculas y minúsculas) dentro de un archivo. El primer parámetro es la cadena a buscar entre comillas, y el segundo es el archivo donde se realizará la búsqueda.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 26</h2>
+                <p>¿Cuál es el comando que permite establecer los permisos de solo lectura y archivo oculto a datos.txt?</p>
+                <h3>Solución</h3>
+                <code>attrib +r +h datos.txt</code>
+                <h3>Explicación</h3>
+                <p>Al igual que en el ejercicio anterior, se utiliza el comando <code>attrib</code>. <code>+r</code> añade el atributo de solo lectura para prevenir su modificación, y <code>+h</code> añade el atributo de oculto para que no aparezca en listados de directorio normales (a menos que se use <code>dir /a</code>).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer fijo -->
+    <footer class="page-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="mentores.png" alt="Consultora Mentores" class="footer-logo">
+                <span class="footer-text">Consultora Mentores - Excelencia Académica</span>
+            </div>
+            <div class="footer-right">
+                © 2025 Ing. Jhoel Mauricio Legua Villegas
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Barra de progreso de lectura
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector('.progress-bar').style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>

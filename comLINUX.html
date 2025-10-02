@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux - Consultora Mentores</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="page-header">
+        <div class="header-content">
+            <div class="header-nav">
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Volver al inicio</span>
+                </a>
+            </div>
+            <div class="logo-section">
+                <div class="header-text">
+                    <h1>CAPÍTULO II: LINUX</h1>
+                    <p class="chapter-subtitle">Consultora Mentores - Comandos y Soluciones de Excelencia</p>
+                </div>
+            </div>
+            
+            <div class="author-section">
+                <div class="author-info">
+                    <h3>Ing. Jhoel Mauricio Legua Villegas</h3>
+                    <p>Docente Academia</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+
+        <div class="problemas-grid">
+            <div class="problema">
+                <h2>Problema 1 y 5</h2>
+                <p>¿Cuál es el comando para cambiar el nombre del archivo algebra1.txt a algebra2.txt en Linux?</p>
+                <h3>Solución</h3>
+                <code>mv algebra1.txt algebra2.txt</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>mv</code> (move) se utiliza tanto para mover archivos como para renombrarlos. Si la ubicación de destino es el mismo directorio, el comando simplemente cambia el nombre del archivo.</p>
+            </div>
+            
+            <div class="problema">
+                <h2>Problema 2</h2>
+                <p>¿Cuál es el resultado de este comando? <code>echo "Esto es un ejemplo de tr para com-99" | tr 'aeiou' 'AEIOU'</code></p>
+                <h3>Solución</h3>
+                <code>EstO Es Un EjEmplO dE tr pArA cOm-99</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>echo</code> envía el texto al comando <code>tr</code> a través de una tubería (<code>|</code>). El comando <code>tr</code> (translate) reemplaza cada carácter del primer conjunto ('aeiou') por su correspondiente en el segundo conjunto ('AEIOU'), convirtiendo solo las vocales a mayúsculas.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 3</h2>
+                <p>¿Cómo se puede crear un nuevo directorio en Linux utilizando el comando "mkdir" y cómo se puede crear una jerarquía de directorios en una sola línea de comando?</p>
+                <h3>Solución</h3>
+                <p>Crear un solo directorio:</p>
+                <code>mkdir mi_directorio</code>
+                <p>Crear una jerarquía (varios directorios anidados a la vez):</p>
+                <code>mkdir -p dir1/dir2/dir3</code>
+                <h3>Explicación</h3>
+                <p><code>mkdir</code> crea directorios. La opción <code>-p</code> (parents) le indica a <code>mkdir</code> que cree también los directorios padres necesarios en la ruta si estos no existen.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 4</h2>
+                <p>Dado el archivo <strong>texto.txt</strong> con el contenido: <br><code>la utilidad cut<br>es fácil de usar y es útil</code><br>¿Cómo sería el comando para que me muestre: <br><code>la tili<br>es áci</code></p>
+                <h3>Solución</h3>
+                <code>cut -c 1-2,5-8 texto.txt</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>cut</code> se usa para extraer secciones de cada línea. La opción <code>-c</code> especifica que se cortará por posición de caracteres. <code>1-2</code> extrae los dos primeros caracteres y <code>5-8</code> extrae los caracteres desde la quinta hasta la octava posición en cada línea.</p>
+            </div>
+            
+            <div class="problema">
+                <h2>Problema 6</h2>
+                <p>¿Qué tipo de permiso no corresponde según el siguiente comando? <code>chmod 124 i_02.png</code></p>
+                <h3>Solución</h3>
+                <p>Los permisos asignados son muy restrictivos. Por ejemplo, el <strong>propietario no tiene permiso de lectura ni de escritura</strong>, solo de ejecución, lo cual es muy inusual para un archivo de imagen.</p>
+                <h3>Explicación</h3>
+                <p>Los permisos en notación octal se leen de la siguiente manera:</p>
+                <ul>
+                    <li><strong>1 (Propietario):</strong> Solo ejecución (---x). No puede leer ni modificar su propio archivo.</li>
+                    <li><strong>2 (Grupo):</strong> Solo escritura (--w-). Los miembros del grupo pueden modificarlo, pero no leerlo.</li>
+                    <li><strong>4 (Otros):</strong> Solo lectura (r--). Cualquier otro usuario puede leerlo.</li>
+                </ul>
+            </div>
+            
+            <div class="problema">
+                <h2>Problema 7</h2>
+                <p>¿Qué comandos en Linux realiza un listado completo de los archivos cuyo nombre comience con la letra D y la extensión tenga 3 caracteres exactamente?</p>
+                <h3>Solución</h3>
+                <code>ls -l D*.???</code>
+                <h3>Explicación</h3>
+                <ul>
+                    <li><code>ls</code>: Comando para listar archivos.</li>
+                    <li><code>-l</code>: Opción para mostrar un listado largo y detallado.</li>
+                    <li><code>D*</code>: Patrón que coincide con cualquier nombre que empiece con "D". El asterisco (<code>*</code>) es un comodín para cero o más caracteres.</li>
+                    <li><code>.???</code>: Patrón que coincide con cualquier extensión de exactamente 3 caracteres. El signo de interrogación (<code>?</code>) es un comodín para un solo carácter.</li>
+                </ul>
+            </div>
+            
+            <div class="problema">
+                <h2>Problema 8</h2>
+                <p>¿Qué tipo de autorización se le asigna al archivo trabajo.txt con el siguiente comando: <code>chmod 764 trabajo.txt</code>?</p>
+                <h3>Solución</h3>
+                <ul>
+                    <li><strong>Propietario:</strong> Lectura, escritura y ejecución (rwx).</li>
+                    <li><strong>Grupo:</strong> Lectura y escritura (rw-).</li>
+                    <li><strong>Otros:</strong> Solo lectura (r--).</li>
+                </ul>
+                <h3>Explicación</h3>
+                <p>La notación octal es la suma de los valores de los permisos (Lectura=4, Escritura=2, Ejecución=1):</p>
+                <ul>
+                    <li><strong>7</strong> = 4 + 2 + 1 (rwx)</li>
+                    <li><strong>6</strong> = 4 + 2 (rw-)</li>
+                    <li><strong>4</strong> = 4 (r--)</li>
+                </ul>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 9</h2>
+                <p>Indique la acción que realiza el siguiente comando <code>pwd</code>.</p>
+                <h3>Solución</h3>
+                <p>Muestra la ruta completa del directorio de trabajo actual.</p>
+                <h3>Explicación</h3>
+                <p><code>pwd</code> son las siglas de "Print Working Directory" (Imprimir Directorio de Trabajo). Es útil para saber en qué parte del sistema de archivos te encuentras.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 10</h2>
+                <p>¿Qué realiza la instrucción <code>ls | more</code>?</p>
+                <h3>Solución</h3>
+                <p>Lista el contenido del directorio y muestra el resultado de forma paginada, es decir, una pantalla a la vez.</p>
+                <h3>Explicación</h3>
+                <p>La salida del comando <code>ls</code> es "redirigida" a través de la tubería (<code>|</code>) como entrada para el comando <code>more</code>, el cual permite visualizar la información por páginas, avanzando con la barra espaciadora.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 11</h2>
+                <p>Indique la acción que realiza el siguiente comando <code>grep</code>.</p>
+                <h3>Solución</h3>
+                <p>Busca líneas que contengan un patrón de texto específico dentro de uno o más archivos.</p>
+                <h3>Explicación</h3>
+                <p><code>grep</code> es una herramienta muy potente para filtrar texto. Por ejemplo, <code>grep "error" sistema.log</code> buscaría y mostraría todas las líneas que contienen la palabra "error" en el archivo sistema.log.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 12</h2>
+                <p>Cuál es la instrucción correcta para que el propietario del archivo Texto pueda leer y escribir en el archivo.</p>
+                <h3>Solución</h3>
+                <code>chmod u+rw Texto</code>
+                <h3>Explicación</h3>
+                <p><code>chmod</code> modifica los permisos. La letra <code>u</code> se refiere al propietario (user). El signo <code>+</code> añade permisos, y <code>rw</code> especifica lectura (read) y escritura (write). Este comando añade los permisos de lectura y escritura para el dueño sin alterar los demás permisos existentes.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 13</h2>
+                <p>¿Cómo se llama al núcleo del sistema operativo Linux?</p>
+                <h3>Solución</h3>
+                <p>Kernel.</p>
+                <h3>Explicación</h3>
+                <p>El Kernel es el núcleo o corazón del sistema operativo. Se encarga de gestionar los recursos del hardware y de permitir la comunicación entre los componentes de software y hardware.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 14</h2>
+                <p>¿Qué número determina los permisos de un archivo en un sistema operativo Linux?</p>
+                <h3>Solución</h3>
+                <p>La notación octal (números del 0 al 7).</p>
+                <h3>Explicación</h3>
+                <p>Se utiliza un código de tres dígitos en base 8 (octal), donde cada dígito representa los permisos para el propietario, el grupo y otros, respectivamente. Cada dígito es la suma de los valores: 4 (lectura), 2 (escritura) y 1 (ejecución).</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 15</h2>
+                <p>Cuál es el comando para ordenar líneas de archivos de texto en Linux.</p>
+                <h3>Solución</h3>
+                <code>sort</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>sort</code> lee las líneas de un archivo de texto, las ordena alfabética o numéricamente, y muestra el resultado en la salida estándar.</p>
+            </div>
+            
+            <div class="problema">
+                <h2>Problema 16</h2>
+                <p>Indique las principales diferencias entre los siguientes comandos que sirven para la visualización de archivos: cat, more, less, head, tail.</p>
+                <h3>Solución y Explicación</h3>
+                <ul>
+                    <li><strong>cat:</strong> Muestra el contenido <strong>completo</strong> de un archivo de una sola vez, sin pausas. Es ideal para archivos cortos.</li>
+                    <li><strong>more:</strong> Muestra el contenido del archivo <strong>página por página</strong>. Solo permite avanzar hacia adelante en el texto.</li>
+                    <li><strong>less:</strong> Es una versión mejorada de <code>more</code>. También muestra el contenido por páginas, pero permite <strong>avanzar y retroceder</strong>, además de realizar búsquedas.</li>
+                    <li><strong>head:</strong> Muestra las <strong>primeras 10 líneas</strong> de un archivo por defecto.</li>
+                    <li><strong>tail:</strong> Muestra las <strong>últimas 10 líneas</strong> de un archivo por defecto. Es muy útil para ver los registros más recientes de un archivo de log.</li>
+                </ul>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 17</h2>
+                <p>En Linux, en su directorio actual de trabajo cree el archivo Datos.dat con la información proporcionada.</p>
+                <h3>Solución</h3>
+                <code>echo -e "455613:Mamani:Aliaga:Tobias:UMSA:La Paz\n145673:Gutierrez:Pacheco:Sonia:USFA:La Paz\n789613:Paz:Cordero:Pedro Armando:UMSS:Cochabamba\n454589:Choque:Nina:Ana Luz:UMSA:La Paz\n102513:Rojas:Quispe:Pamela:UMSS:Cochabamba\n789456:Mamani:Ticona:Julio Cesar:UMSA:La Paz\n258963:Diaz:Condori:Lusmila:UMSA:La Paz\n654789:Vargas:Tola:Alejandro Juan:EMI:La Paz" > Datos.dat</code>
+                <h3>Explicación</h3>
+                <p>El comando <code>echo -e</code> permite interpretar secuencias de escape como <code>\n</code> (nueva línea), lo que nos permite escribir todo el contenido multilínea en un solo comando. El operador <code>></code> redirige esa salida de texto y la guarda en el archivo `Datos.dat`.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 18</h2>
+                <p>Cree la siguiente estructura y muestre un listado de los archivos y subdirectorios.</p>
+                <h3>Solución</h3>
+                <p><strong>Para crear la estructura:</strong></p>
+                <code>mkdir -p PREFA/{COM99/{DOS,LINUX,LATEX,HTML},INF99/{ALG,DF/{REPETITIVAS,DECISION}},MAT99,LIN99}</code>
+                <p><strong>a) Mostrar un listado del directorio actual:</strong></p>
+                <code>ls</code>
+                <p><strong>b) Mostrar con toda la información, permisos, tamaño, fecha de creación:</strong></p>
+                <code>ls -l</code>
+                <p><strong>c) Mostrar ordenados por la fecha:</strong></p>
+                <code>ls -lt</code>
+                <h3>Explicación</h3>
+                <p>Se utiliza <code>mkdir -p</code> para crear toda la jerarquía de directorios de una sola vez. Luego, se usa el comando <code>ls</code> con diferentes opciones para listar el contenido: sin opciones para un listado simple, <code>-l</code> para un formato largo y detallado, y <code>-lt</code> para ordenar por fecha de modificación.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 19</h2>
+                <p>¿Cuáles son las características del Sistema operativo Linux?</p>
+                <h3>Solución y Explicación</h3>
+                <ul>
+                    <li><strong>Multiusuario:</strong> Varios usuarios pueden acceder a los recursos del sistema simultáneamente.</li>
+                    <li><strong>Multitarea:</strong> El sistema puede ejecutar varios procesos o aplicaciones al mismo tiempo.</li>
+                    <li><strong>Código Abierto (Open Source):</strong> Su código fuente es libremente accesible para ser estudiado, modificado y distribuido.</li>
+                    <li><strong>Seguridad:</strong> Tiene un sistema robusto de permisos para archivos y procesos.</li>
+                    <li><strong>Estabilidad:</strong> Es conocido por su capacidad de funcionar por largos períodos sin reiniciarse.</li>
+                </ul>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 20</h2>
+                <p>¿Qué acción realiza la siguiente instrucción? <code>mv modulo/trabajo.txt modulo/practica.txt</code></p>
+                <h3>Solución</h3>
+                <p>Renombra el archivo <code>trabajo.txt</code> a <code>practica.txt</code> dentro del mismo directorio <code>modulo</code>.</p>
+                <h3>Explicación</h3>
+                <p>El comando <code>mv</code> sirve para mover o renombrar archivos. Cuando la ruta de origen y la de destino están en el mismo directorio, la operación resultante es un cambio de nombre.</p>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 21</h2>
+                <p>Crear la estructura de subdirectorios y archivos en el directorio actual y resolver los incisos.</p>
+                <h3>Solución</h3>
+                <p><strong>Para crear la estructura de directorios:</strong></p>
+                <code>mkdir -p prefas/{mate/{geometria,algebra},fisica,com99/{dos,linux,html}}</code>
+                <p><strong>a) Crear el archivo dirección.txt dentro del subdirectorio geometría:</strong></p>
+                <code>touch prefas/mate/geometria/direccion.txt</code>
+                <p><strong>b) Buscar la dirección “miraflores”, en los archivos con extensión “txt” del directorio geometría:</strong></p>
+                <code>grep "miraflores" prefas/mate/geometria/*.txt</code>
+                <p><strong>c) Quitar los permisos de lectura al dueño y grupo sobre archivo ayuda.txt del directorio prefas:</strong> (Asumiendo que el archivo existe)</p>
+                <code>chmod ug-r prefas/ayuda.txt</code>
+                <h3>Explicación</h3>
+                <ul>
+                    <li><code>touch</code> es un comando para crear un archivo vacío.</li>
+                    <li><code>grep</code> busca patrones de texto dentro de archivos.</li>
+                    <li><code>chmod ug-r</code> modifica permisos: <code>u</code> (dueño), <code>g</code> (grupo), <code>-</code> (quitar permiso), <code>r</code> (lectura).</li>
+                </ul>
+            </div>
+            
+            <div class="problema">
+                <h2>Problema 22: Comando LS</h2>
+                <p>Dado el comando LS, ¿cuáles son sus opciones? Presentar dos ejemplos por cada opción y explicar.</p>
+                <h3>Opción: -l (long format)</h3>
+                <p><strong>Explicación:</strong> Muestra una lista detallada con permisos, propietario, grupo, tamaño, fecha de modificación y nombre.</p>
+                <ul>
+                    <li><strong>Ejemplo 1:</strong> <code>ls -l</code><br>Realiza un listado largo del contenido del directorio actual.</li>
+                    <li><strong>Ejemplo 2:</strong> <code>ls -l /etc/</code><br>Realiza un listado largo del contenido del directorio /etc.</li>
+                </ul>
+                <h3>Opción: -a (all)</h3>
+                <p><strong>Explicación:</strong> Muestra todos los archivos y directorios, incluyendo los ocultos (aquellos cuyos nombres empiezan con un punto). </p>
+                <ul>
+                    <li><strong>Ejemplo 1:</strong> <code>ls -a</code><br>Muestra todos los archivos del directorio actual, incluidos los ocultos.</li>
+                    <li><strong>Ejemplo 2:</strong> <code>ls -la ~</code><br>Muestra un listado largo y detallado de todos los archivos en el directorio home del usuario (<code>~</code>).</li>
+                </ul>
+            </div>
+                
+            <div class="problema">
+                <h2>Problema 23: Comando CHMOD</h2>
+                <p>Dado el comando CHMOD, ¿cuáles son sus opciones? Presentar dos ejemplos por cada opción y explicar.</p>
+                <h3>Opción: -R (recursive)</h3>
+                <p><strong>Explicación:</strong> Aplica los cambios de permisos a un directorio y a todo su contenido (archivos y subdirectorios) de forma recursiva.</p>
+                <ul>
+                    <li><strong>Ejemplo 1:</strong> <code>chmod -R 755 public_html</code><br>Establece permisos de lectura y ejecución para todos, y escritura solo para el dueño, a toda la carpeta public_html y su contenido.</li>
+                    <li><strong>Ejemplo 2:</strong> <code>chmod -R go-w confidential</code><br>Quita el permiso de escritura (w) para el grupo (g) y otros (o) a la carpeta "confidential" y todo lo que contiene.</li>
+                </ul>
+                <h3>Uso: Notación Simbólica (u, g, o, a)</h3>
+                <p><strong>Explicación:</strong> Permite modificar permisos de forma aditiva (+) o sustractiva (-) para el usuario (u), grupo (g), otros (o) o todos (a).</p>
+                <ul>
+                    <li><strong>Ejemplo 1:</strong> <code>chmod u+x mi_script.sh</code><br>Añade (+) el permiso de ejecución (x) para el usuario/dueño (u) del archivo.</li>
+                    <li><strong>Ejemplo 2:</strong> <code>chmod o-rwx secret.dat</code><br>Quita (-) los permisos de lectura (r), escritura (w) y ejecución (x) para otros (o).</li>
+                </ul>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 24: Comando SORT</h2>
+                <p>Dado el comando SORT, ¿cuáles son sus opciones? Presentar dos ejemplos por cada opción y explicar.</p>
+                <h3>Opción: -r (reverse)</h3>
+                <p><strong>Explicación:</strong> Invierte el resultado de la ordenación, mostrando los resultados en orden descendente.</p>
+                <ul>
+                    <li><strong>Ejemplo 1:</strong> <code>sort -r nombres.txt</code><br>Ordena las líneas del archivo de la Z a la A.</li>
+                    <li><strong>Ejemplo 2:</strong> <code>ls | sort -r</code><br>Lista los archivos del directorio y los ordena en orden alfabético inverso.</li>
+                </ul>
+                <h3>Opción: -n (numeric sort)</h3>
+                <p><strong>Explicación:</strong> Realiza una ordenación numérica en lugar de una alfabética. Es esencial para ordenar listas de números correctamente.</p>
+                <ul>
+                    <li><strong>Ejemplo 1:</strong> <code>sort -n puntuaciones.txt</code><br>Ordena un archivo que contiene números en cada línea de menor a mayor.</li>
+                    <li><strong>Ejemplo 2:</strong> <code>du -h | sort -h</code><br>La opción -h (human-readable) de sort se usa junto a comandos como `du -h` para ordenar tamaños de archivo como 1K, 2M, 1G correctamente.</li>
+                </ul>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 25: Comando FIND</h2>
+                <p>Dado el comando FIND, ¿cuáles son sus opciones? Presentar dos ejemplos por cada opción y explicar.</p>
+                <h3>Opción: -name</h3>
+                <p><strong>Explicación:</strong> Busca archivos y directorios basándose en su nombre. Se pueden usar comodines como '*' entre comillas.</p>
+                <ul>
+                    <li><strong>Ejemplo 1:</strong> <code>find /home -name "*.pdf"</code><br>Busca todos los archivos que terminen en .pdf dentro del directorio /home y todos sus subdirectorios.</li>
+                    <li><strong>Ejemplo 2:</strong> <code>find . -name "config.txt"</code><br>Busca un archivo llamado exactamente "config.txt" a partir del directorio actual (.).</li>
+                </ul>
+                <h3>Opción: -type</h3>
+                <p><strong>Explicación:</strong> Filtra la búsqueda por el tipo de archivo. Los más comunes son 'f' para archivo regular y 'd' para directorio.</p>
+                <ul>
+                    <li><strong>Ejemplo 1:</strong> <code>find /var/log -type f</code><br>Encuentra únicamente los archivos (no directorios) dentro de la ruta /var/log.</li>
+                    <li><strong>Ejemplo 2:</strong> <code>find . -type d -name "backups"</code><br>Encuentra únicamente directorios que se llamen "backups" a partir de la ubicación actual.</li>
+                </ul>
+            </div>
+
+            <div class="problema">
+                <h2>Problema 26: Comando CAT</h2>
+                <p>Dado el comando CAT, ¿cuáles son sus opciones? Presentar dos ejemplos por cada opción y explicar.</p>
+                <h3>Opción: -n (number)</h3>
+                <p><strong>Explicación:</strong> Numera todas las líneas de la salida, incluyendo las líneas en blanco.</p>
+                <ul>
+                    <li><strong>Ejemplo 1:</strong> <code>cat -n mi_archivo.txt</code><br>Muestra el contenido del archivo con cada línea precedida por su número.</li>
+                    <li><strong>Ejemplo 2:</strong> <code>cat -n archivo1.txt archivo2.txt</code><br>Concatena ambos archivos y muestra el resultado con una numeración de líneas continua.</li>
+                </ul>
+                <h3>Opción: -b (number-nonblank)</h3>
+                <p><strong>Explicación:</strong> Es similar a -n, pero numera únicamente las líneas que no están vacías.</p>
+                <ul>
+                    <li><strong>Ejemplo 1:</strong> <code>cat -b codigo.py</code><br>Muestra el código fuente numerando solo las líneas que contienen código o comentarios, ignorando las líneas en blanco.</li>
+                    <li><strong>Ejemplo 2:</strong> <code>cat -b poema.txt</code><br>Muestra un poema numerando los versos pero no los espacios en blanco entre estrofas.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer fijo -->
+    <footer class="page-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="mentores.png" alt="Consultora Mentores" class="footer-logo">
+                <span class="footer-text">Consultora Mentores - Excelencia Académica</span>
+            </div>
+            <div class="footer-right">
+                © 2025 Ing. Jhoel Mauricio Legua Villegas
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Barra de progreso de lectura
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector('.progress-bar').style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>
