@@ -64,15 +64,21 @@ El proyecto está configurado para desplegar fácilmente en plataformas como:
 - Render
 - Netlify
 - Vercel
-- GitHub Pages
-
-### Para desplegar en Render:
-1. Conectar repositorio de GitHub
 2. Configurar como sitio estático
 3. El archivo `package.json` incluye las configuraciones necesarias
+### 🚀 Despliegue en Render (Static Site)
+1. Crear nuevo servicio Static Site y conectar el repositorio.
+2. Establecer Build Command: `npm install` (solo para instalar `serve` si Render lo requiere en previsualizaciones; para sitio estático puro puedes dejarlo vacío).
+3. Establecer Publish Directory: `public`.
+4. (Opcional) Página 404: renombra `404.html` dentro de `public/` para manejo de rutas inexistentes.
+5. Deploy. No se necesita paso de build adicional.
 
-## 📁 Estructura del Proyecto
+Para probar localmente:
 
+```bash
+npm install
+npm run dev   # Servir en http://localhost:3000
+```
 ```
 /
 ├── index.html          # Página principal
@@ -87,19 +93,27 @@ El proyecto está configurado para desplegar fácilmente en plataformas como:
 
 ## ⚡ Instalación Local
 
-```bash
-# Clonar el repositorio
-git clone [url-del-repositorio]
+## 📁 Estructura del Proyecto (Reorganizada)
 
-# Navegar al directorio
-cd academia-informatica-practicas
-
-# Instalar dependencias (opcional)
-npm install
-
-# Iniciar servidor local
-npm start
 ```
+/
+├── public/                 # Raíz de archivos estáticos servidos
+│   ├── index.html          # Página principal
+│   ├── comCMD.html         # Problemas de MS-DOS
+│   ├── comLINUX.html       # Problemas de Linux
+│   └── assets/
+│       ├── css/
+│       │   └── style.css   # Estilos globales
+│       ├── js/
+│       │   └── main.js     # Lógica JS consolidada
+│       └── images/         # Imágenes (mentores.png, autor.jpg, etc.)
+├── package.json            # Configuración del proyecto
+├── 404.html                # Página de error (mover a public si se requiere)
+├── README.md               # Documentación
+└── .gitignore
+```
+
+Sugerencia: mover `404.html` a `public/` para soporte de rutas 404 en plataformas que lo utilicen.
 
 ## 🔧 Personalización
 

@@ -4,8 +4,10 @@
   "description": "Portal académico con soluciones de problemas de informática del primer periodo",
   "main": "index.html",
   "scripts": {
-    "start": "serve -s . -l 3000",
-    "build": "echo 'Static site - no build needed'",
+    "start": "serve -s public -l 3000",
+    "dev": "serve public -l 3000",
+    "build": "echo 'Static site - no build step (Render deploys public/)'",
+    "preview": "serve -s public -l 5000",
     "test": "echo 'No tests configured'"
   },
   "keywords": [

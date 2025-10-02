@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MENTORES - Consultora de Excelencia Académica</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="home-page">
@@ -22,13 +22,13 @@
 
         <div class="header-content">
             <div class="logo-section">
-                <img src="mentores.png" alt="Logo Consultora Mentores" class="academy-logo">
+                <img src="assets/images/mentores.png" alt="Logo Consultora Mentores" class="academy-logo">
                 <h1 class="main-title">Consultora Mentores</h1>
                 <p class="subtitle">Consultora de Excelencia Académica - Transformando el futuro digital con más de 4 años forjando líderes en tecnología</p>
             </div>
             
             <div class="author-section">
-                <img src="autor.jpg" alt="Ing. Jhoel Mauricio Legua Villegas" class="author-photo">
+                <img src="assets/images/autor.jpg" alt="Ing. Jhoel Mauricio Legua Villegas" class="author-photo">
                 <div class="author-info">
                     <h3>Ing. Jhoel Mauricio Legua Villegas</h3>
                     <p>Docente Academia</p>
@@ -235,7 +235,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="mentores.png" alt="Logo MENTORES" class="footer-logo">
+                    <img src="assets/images/image.png" alt="Logo MENTORES" class="footer-logo">
                     <p><strong>MENTORES</strong></p>
                     <p>Consultora de Excelencia Académica que trasciende expectativas</p>
                 </div>
@@ -243,8 +243,8 @@
                     <h4>Contacto</h4>
                     <p><i class="fas fa-user"></i> Ing. Jhoel Mauricio Legua Villegas</p>
                     <p><i class="fas fa-graduation-cap"></i> Docente Academia</p>
-                    <p><i class="fab fa-whatsapp"></i> 60169727 - 64177967</p>
-                    <p><i class="fab fa-tiktok"></i> @estudiantesmentorescea</p>
+                    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/59160169727" target="_blank" rel="noopener">60169727</a> - <a href="https://wa.me/59164177967" target="_blank" rel="noopener">64177967</a></p>
+                    <p><i class="fab fa-tiktok"></i> <a href="https://www.tiktok.com/@estudiantesmentorescea" target="_blank" rel="noopener">@estudiantesmentorescea</a></p>
                 </div>
                 <div class="footer-section">
                     <h4>Materias Disponibles</h4>
@@ -261,79 +261,6 @@
         </div>
     </footer>
 
-    <script>
-        // Animación de barra de progreso
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.querySelector('.progress-bar').style.width = scrolled + '%';
-        });
-
-        // Animaciones de entrada
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observar elementos animables
-        document.querySelectorAll('.subject-card, .stat-card').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Efecto parallax suave en elementos flotantes
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const elements = document.querySelectorAll('.floating-element');
-            
-            elements.forEach((element, index) => {
-                const speed = 0.5 + (index * 0.1);
-                const yPos = -(scrolled * speed);
-                element.style.transform = `translateY(${yPos}px) rotate(${scrolled * 0.1}deg)`;
-            });
-        });
-
-        // Contador animado para estadísticas
-        function animateCounter(element, target, duration = 2000) {
-            let start = 0;
-            const increment = target / (duration / 16);
-            
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= target) {
-                    element.textContent = target;
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(start);
-                }
-            }, 16);
-        }
-
-        // Inicializar contadores cuando sean visibles
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counter = entry.target.querySelector('h4');
-                    const targetValue = counter.textContent.replace(/[^\d]/g, '');
-                    if (targetValue && !counter.classList.contains('animated')) {
-                        counter.classList.add('animated');
-                        animateCounter(counter, parseInt(targetValue));
-                    }
-                }
-            });
-        });
-
-        document.querySelectorAll('.stat-card').forEach(card => {
-            statsObserver.observe(card);
-        });
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

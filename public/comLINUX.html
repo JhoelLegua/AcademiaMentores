@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linux - Consultora Mentores</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="progress-bar"></div>
     
     <header class="page-header">
-        <div class="header-content">
+        <div class="header-content" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
             <div class="header-nav">
                 <a href="index.html" class="back-btn">
                     <i class="fas fa-arrow-left"></i>
@@ -356,7 +356,6 @@
     <footer class="page-footer">
         <div class="footer-content">
             <div class="footer-left">
-                <img src="mentores.png" alt="Consultora Mentores" class="footer-logo">
                 <span class="footer-text">Consultora Mentores - Excelencia Académica</span>
             </div>
             <div class="footer-right">
@@ -365,14 +364,6 @@
         </div>
     </footer>
 
-    <script>
-        // Barra de progreso de lectura
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.querySelector('.progress-bar').style.width = scrolled + '%';
-        });
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
