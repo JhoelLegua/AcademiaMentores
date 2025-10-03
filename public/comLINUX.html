@@ -11,30 +11,22 @@
     <div class="progress-bar"></div>
     
     <header class="page-header">
-        <div class="header-content" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+        <div class="header-content">
             <div class="header-nav">
                 <a href="index.html" class="back-btn">
                     <i class="fas fa-arrow-left"></i>
                     <span>Volver al inicio</span>
                 </a>
             </div>
-            <div class="logo-section">
-                <div class="header-text">
-                    <h1>CAPÍTULO II: LINUX</h1>
-                    <p class="chapter-subtitle">Consultora Mentores - Comandos y Soluciones de Excelencia</p>
-                </div>
-            </div>
-            
-            <div class="author-section">
-                <div class="author-info">
-                    <h3>Ing. Jhoel Mauricio Legua Villegas</h3>
-                    <p>Docente Academia</p>
-                </div>
-            </div>
         </div>
     </header>
     
     <div class="container">
+        <!-- Título del capítulo movido al body -->
+        <div class="chapter-header" style="text-align: center;">
+            <h1>CAPÍTULO II: LINUX</h1>
+            <p class="chapter-subtitle">Consultora Mentores - Comandos y Soluciones de Excelencia</p>
+        </div>
 
         <div class="problemas-grid">
             <div class="problema">
@@ -363,6 +355,19 @@
             </div>
         </div>
     </footer>
+
+    <!-- Script pequeño para alternar el header en móviles -->
+    <script>
+        (function(){
+            const header = document.querySelector('.page-header');
+            const toggle = header && header.querySelector('.nav-toggle');
+            if(!toggle) return;
+            toggle.addEventListener('click', function(){
+                const open = header.classList.toggle('nav-open');
+                toggle.setAttribute('aria-expanded', String(open));
+            });
+        })();
+    </script>
 
     <script src="assets/js/main.js"></script>
 </body>

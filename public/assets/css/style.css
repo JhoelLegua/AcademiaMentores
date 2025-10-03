@@ -26,7 +26,6 @@
     --shadow-large: 0 20px 40px rgba(0, 0, 0, 0.1);
     --border-radius: 12px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --header-height: 120px;
 }
 
 /* Configuración del body */
@@ -48,12 +47,8 @@ body {
 
 /* Estilos para páginas de contenido */
 body:not(.home-page) {
-    padding-top: 100px;
-    padding-bottom: 90px;
-    transition: padding-top .35s ease;
-}
-body.header-condensed:not(.home-page) {
-    padding-top: 80px;
+    padding-top: 50px;
+    padding-bottom: 80px;
 }
 
 /* Animación de entrada */
@@ -72,12 +67,7 @@ body.header-condensed:not(.home-page) {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 20px 2.5rem;
-}
-
-body:not(.home-page) .container {
-    padding-top: 3rem;
-    padding-bottom: 3.5rem;
+    padding: 2rem 20px;
 }
 
 /* Título principal */
@@ -102,6 +92,79 @@ h1::after {
     height: 4px;
     background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
     border-radius: 2px;
+}
+
+/* ===== ESTILOS PARA HEADERS DE PÁGINAS ===== */
+.page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    padding: 0.75rem 1.5rem;
+    min-height: 50px;
+}
+
+.page-header .header-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 1rem;
+}
+
+.header-nav {
+    flex: 0 0 auto;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: var(--transition);
+    background: rgba(52, 152, 219, 0.1);
+    font-size: 0.9rem;
+}
+
+.back-btn:hover {
+    background: var(--secondary-color);
+    color: var(--white);
+    transform: translateX(-5px);
+}
+
+.page-header .logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+}
+
+.page-header .header-text h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: 0 0 0.2rem 0;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.page-header .chapter-subtitle {
+    font-size: 0.8rem;
+    color: var(--dark-gray);
+    margin: 0;
+    opacity: 0.8;
 }
 
 /* Grid de problemas */
@@ -245,294 +308,7 @@ pre code {
     font-size: 0.9rem;
 }
 
-/* Secciones especiales */
-.solucion {
-    background: linear-gradient(135deg, rgba(39, 174, 96, 0.1), rgba(39, 174, 96, 0.05));
-    border-left: 4px solid var(--success-color);
-    padding: 15px;
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    margin: 15px 0;
-}
-
-.explicacion {
-    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(52, 152, 219, 0.05));
-    border-left: 4px solid var(--secondary-color);
-    padding: 15px;
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    margin: 15px 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-    
-    .problemas-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .problema {
-        padding: 20px;
-    }
-    
-    h1 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .problema h2 {
-        font-size: 1.2rem;
-    }
-
-    .hero-header {
-        padding: 3rem 1rem;
-        min-height: auto;
-    }
-    
-    .header-content {
-        gap: 1.5rem;
-    }
-
-    .academy-logo {
-        width: min(520px, 85vw);
-    }
-    
-    .author-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 1.25rem 1.75rem;
-        gap: 1rem;
-    }
-
-    .author-photo {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .page-header {
-        padding: 0.75rem 1rem;
-    }
-
-    .page-header .header-content {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .page-header .logo-section {
-        order: 1;
-    }
-
-    .header-nav {
-        order: 0;
-        align-self: flex-start;
-    }
-
-    .page-header .author-section {
-        order: 2;
-    }
-
-    .page-header .academy-logo {
-        width: 240px;
-        height: 120px;
-        padding: 10px 14px;
-    }
-
-    body:not(.home-page) {
-        padding-top: 180px;
-    }
-
-    .subjects-grid {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-        gap: 1.5rem;
-    }
-    
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-
-    .areas-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-
-    .area-card {
-        padding: 1.5rem 1rem;
-    }
-
-    .area-icon {
-        font-size: 2rem;
-    }
-
-    .area-card h3 {
-        font-size: 0.95rem;
-    }
-
-    .contact-grid {
-        gap: 1.5rem;
-    }
-
-    .contact-item {
-        min-width: 200px;
-        padding: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        padding: 5px;
-    }
-    
-    .problema {
-        padding: 15px;
-    }
-    
-    h1 {
-        font-size: 1.8rem;
-    }
-    
-    code {
-        font-size: 0.8rem;
-        padding: 3px 6px;
-    }
-
-    .hero-header {
-        padding: 2rem 0.75rem;
-    }
-
-    .academy-logo {
-        width: min(350px, 80vw);
-    }
-
-    .main-title {
-        font-size: 1.75rem;
-    }
-
-    .subtitle {
-        font-size: 0.9rem;
-    }
-
-    .author-section {
-        padding: 1rem 1.25rem;
-    }
-
-    .author-photo {
-        width: 70px;
-        height: 70px;
-    }
-
-    .page-header .academy-logo {
-        width: 200px;
-        height: 100px;
-    }
-    
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 1.5rem;
-    }
-
-    .areas-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .areas-title,
-    .contact-title {
-        font-size: 1.8rem;
-    }
-
-    .contact-grid {
-        gap: 1rem;
-    }
-
-    .contact-item {
-        min-width: auto;
-        width: 100%;
-    }
-
-    .page-footer .footer-content {
-        flex-direction: column;
-        gap: 0.3rem;
-        text-align: center;
-        font-size: 0.7rem;
-    }
-    
-    .page-footer .footer-left {
-        justify-content: center;
-    }
-    
-    .page-footer {
-        padding: 0.5rem 1rem;
-        height: 50px;
-    }
-}
-
-/* Animaciones adicionales */
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.problema:nth-child(odd) {
-    animation: slideInLeft 0.6s ease-out forwards;
-}
-
-.problema:nth-child(even) {
-    animation: slideInLeft 0.6s ease-out 0.1s forwards;
-}
-
-/* Efecto de enfoque para accesibilidad */
-.problema:focus-within {
-    outline: 3px solid var(--secondary-color);
-    outline-offset: 2px;
-}
-
-/* Scrollbar personalizada */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--light-gray);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--secondary-color);
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-color);
-}
-
-/* Indicador de progreso de lectura */
-.progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-    z-index: 1000;
-    transition: width 0.3s ease;
-}
-
 /* ===== ESTILOS PARA PÁGINA DE INICIO ===== */
-
-/* Hero Header */
 .hero-header {
     position: relative;
     background: var(--gradient-primary);
@@ -594,20 +370,10 @@ pre code {
                     0 0 20px rgba(102, 126, 234, 0.6),
                     0 0 40px rgba(118, 75, 162, 0.4);
     }
-    25% {
+    50% {
         box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3),
                     0 0 25px rgba(240, 147, 251, 0.6),
                     0 0 45px rgba(245, 87, 108, 0.4);
-    }
-    50% {
-        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3),
-                    0 0 20px rgba(79, 172, 254, 0.6),
-                    0 0 40px rgba(0, 242, 254, 0.4);
-    }
-    75% {
-        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3),
-                    0 0 25px rgba(167, 139, 250, 0.6),
-                    0 0 45px rgba(139, 92, 246, 0.4);
     }
 }
 
@@ -650,11 +416,6 @@ pre code {
     border: 3px solid rgba(255, 255, 255, 0.6);
     transition: var(--transition);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.author-photo:hover {
-    transform: scale(1.1) rotate(5deg);
-    border-color: var(--white);
 }
 
 .author-info h3 {
@@ -733,7 +494,7 @@ pre code {
 
 .welcome-section {
     text-align: center;
-    padding: 3rem 2rem 2rem; /* Menos espacio superior */
+    padding: 3rem 2rem 2rem;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -922,460 +683,6 @@ pre code {
     font-size: 0.9rem;
 }
 
-/* Footer */
-.main-footer {
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 3rem 2rem 1rem;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-section h4 {
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-}
-
-.footer-logo {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    background: transparent;
-    padding: 0;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-.footer-section ul {
-    list-style: none;
-}
-
-.footer-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-section a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    transition: var(--transition);
-    --pulse-base: rgba(255, 255, 255, 0.8);
-    --pulse-highlight: var(--secondary-color);
-    animation: pulseLink 3s ease-in-out infinite;
-}
-
-.footer-section a:hover {
-    color: var(--white);
-    animation: none;
-}
-
-/* Animación de palpitación para enlaces */
-@keyframes pulseLink {
-    0%, 100% {
-        color: var(--pulse-base, var(--white));
-        text-shadow: 0 0 0 rgba(255, 255, 255, 0);
-    }
-    50% {
-        color: var(--pulse-highlight, var(--secondary-color));
-        text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
-    }
-}
-
-.coming-soon {
-    color: rgba(255, 255, 255, 0.5);
-    font-style: italic;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* ===== ESTILOS PARA HEADERS DE PÁGINAS ===== */
-
-.page-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    z-index: 1000;
-    padding: 0.75rem 1.5rem;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.page-header .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-    gap: 1rem;
-}
-
-.header-nav {
-    flex: 0 0 auto;
-}
-
-.back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    transition: var(--transition);
-    background: rgba(52, 152, 219, 0.1);
-}
-
-.back-btn:hover {
-    background: var(--secondary-color);
-    color: var(--white);
-    transform: translateX(-5px);
-}
-
-.page-header .logo-section {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    flex: 1;
-    justify-content: center;
-}
-
-.page-header .academy-logo {
-    width: 200px;
-    height: 100px;
-    border-radius: 10px;
-    object-fit: contain;
-    background: transparent;
-    padding: 6px 10px;
-    border: 1.5px solid rgba(102, 126, 234, 0.25);
-    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3),
-                0 3px 10px rgba(0, 0, 0, 0.06);
-    transition: var(--transition);
-}
-
-.page-header .academy-logo:hover {
-    transform: translateY(-3px);
-    border-color: rgba(118, 75, 162, 0.5);
-    box-shadow: 0 0 20px rgba(102, 126, 234, 0.6),
-                0 6px 16px rgba(0, 0, 0, 0.12);
-}
-
-.page-header .author-section {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    flex: 0 0 auto;
-}
-
-.page-header .author-photo {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--light-gray);
-    transition: var(--transition);
-}
-
-.page-header .author-photo:hover {
-    transform: scale(1.1);
-    border-color: var(--secondary-color);
-}
-
-.page-header .author-info h3 {
-    font-size: 0.8rem;
-    color: var(--primary-color);
-    margin-bottom: 0.1rem;
-    font-weight: 600;
-}
-
-.page-header .author-info p {
-    font-size: 0.7rem;
-    color: var(--dark-gray);
-}
-
-/* Animaciones */
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Footer fijo para páginas internas */
-.page-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 1rem 1.5rem;
-    z-index: 1000;
-    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
-    height: 60px;
-    display: flex;
-    align-items: center;
-}
-
-.page-footer .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    font-size: 0.8rem;
-}
-
-.page-footer .footer-left {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.page-footer .footer-logo {
-    width: 40px;
-    height: 30px;
-    border-radius: 4px;
-    object-fit: contain;
-    background: transparent;
-    padding: 0;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Responsive para nueva estructura */
-@media (max-width: 768px) {
-    .hero-header {
-        padding: 2rem 1rem;
-        min-height: auto;
-    }
-    
-    .header-content {
-        gap: 1.2rem;
-    }
-
-    .academy-logo {
-        width: min(480px, 85vw);
-    }
-    
-    .author-section {
-        flex-direction: row;
-        text-align: left;
-        padding: 0.8rem 1.2rem;
-        gap: 0.8rem;
-    }
-
-    .author-photo {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .page-header {
-        padding: 0.6rem 1rem;
-    }
-
-    .page-header .header-content {
-        flex-direction: row;
-        gap: 0.8rem;
-        justify-content: space-between;
-    }
-
-    .page-header .logo-section {
-        gap: 0.8rem;
-        flex: 1;
-    }
-
-    .header-nav {
-        flex-shrink: 0;
-    }
-
-    .page-header .author-section {
-        flex-shrink: 0;
-    }
-
-    .page-header .academy-logo {
-        width: 160px;
-        height: 80px;
-        padding: 5px 8px;
-    }
-
-    body:not(.home-page) {
-        padding-top: 110px;
-    }
-
-    .subjects-grid {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-        gap: 1.5rem;
-    }
-    
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-
-    .areas-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-
-    .area-card {
-        padding: 1.5rem 1rem;
-    }
-
-    .area-icon {
-        font-size: 2rem;
-    }
-
-    .area-card h3 {
-        font-size: 0.95rem;
-    }
-
-    .contact-grid {
-        gap: 1.5rem;
-    }
-
-    .contact-item {
-        min-width: 200px;
-        padding: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-header {
-        padding: 1.5rem 0.5rem;
-    }
-
-    .academy-logo {
-        width: min(350px, 80vw);
-    }
-
-    .main-title {
-        font-size: 1.4rem;
-    }
-
-    .subtitle {
-        font-size: 0.8rem;
-    }
-
-    .author-section {
-        padding: 0.6rem 0.8rem;
-        gap: 0.6rem;
-    }
-
-    .author-photo {
-        width: 45px;
-        height: 45px;
-    }
-
-    .author-info h3 {
-        font-size: 0.75rem;
-    }
-
-    .author-info p {
-        font-size: 0.65rem;
-    }
-
-    .page-header {
-        padding: 0.5rem 0.75rem;
-    }
-
-    .page-header .academy-logo {
-        width: 140px;
-        height: 70px;
-        padding: 4px 6px;
-    }
-
-    .page-header .author-photo {
-        width: 35px;
-        height: 35px;
-    }
-
-    .page-header .author-info h3 {
-        font-size: 0.7rem;
-    }
-
-    .page-header .author-info p {
-        font-size: 0.6rem;
-    }
-
-    .back-btn {
-        padding: 0.4rem 0.6rem;
-        font-size: 0.8rem;
-    }
-
-    .back-btn span {
-        display: none;
-    }
-
-    body:not(.home-page) {
-        padding-top: 90px;
-    }
-    
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 1.5rem;
-    }
-
-    .areas-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .areas-title,
-    .contact-title {
-        font-size: 1.8rem;
-    }
-
-    .contact-grid {
-        gap: 1rem;
-    }
-
-    .contact-item {
-        min-width: auto;
-        width: 100%;
-    }
-
-    .page-footer .footer-content {
-        flex-direction: column;
-        gap: 0.3rem;
-        text-align: center;
-        font-size: 0.7rem;
-    }
-    
-    .page-footer .footer-left {
-        justify-content: center;
-    }
-    
-    .page-footer {
-        padding: 0.5rem 1rem;
-        height: 50px;
-    }
-}
-
 /* Sección de áreas de estudio */
 .areas-section {
     padding: 4rem 2rem;
@@ -1423,21 +730,6 @@ pre code {
     overflow: hidden;
 }
 
-.area-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
-    transition: left 0.5s ease;
-}
-
-.area-card:hover::before {
-    left: 100%;
-}
-
 .area-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-hover);
@@ -1462,7 +754,7 @@ pre code {
     margin: 0;
 }
 
-/* Sección de contacto mejorada */
+/* Sección de contacto */
 .contact-section {
     padding: 4rem 2rem;
     background: var(--gradient-primary);
@@ -1518,11 +810,6 @@ pre code {
     transition: var(--transition);
 }
 
-.contact-item:hover .contact-icon {
-    transform: scale(1.1) rotate(360deg);
-    background: rgba(255, 255, 255, 0.3);
-}
-
 .contact-info h4 {
     font-size: 1.2rem;
     font-weight: 600;
@@ -1539,16 +826,135 @@ pre code {
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
-    display: inline-block;
-    --pulse-base: var(--white);
-    --pulse-highlight: var(--accent-color);
-    animation: pulseLink 2.6s ease-in-out infinite;
 }
 
 .contact-link:hover {
     transform: scale(1.05);
     text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
-    animation: none;
+}
+
+/* Footer principal */
+.main-footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 3rem 2rem 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    background: transparent;
+    padding: 0;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-section a:hover {
+    color: var(--white);
+}
+
+.coming-soon {
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Footer fijo para páginas internas */
+.page-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    z-index: 1000;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.page-footer .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 0.8rem;
+    text-align: center;
+    gap: 2rem;
+}
+
+.page-footer .footer-left,
+.page-footer .footer-right {
+    flex: 1;
+}
+
+/* Indicador de progreso de lectura */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    z-index: 1000;
+    transition: width 0.3s ease;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
 }
 
 /* Animaciones */
@@ -1563,43 +969,239 @@ pre code {
     }
 }
 
-/* Footer fijo para páginas internas */
-.page-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 1rem 1.5rem;
-    z-index: 1000;
-    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
-    height: 60px;
-    display: flex;
-    align-items: center;
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-.page-footer .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    font-size: 0.8rem;
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-.page-footer .footer-left {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.problema:nth-child(odd) {
+    animation: slideInLeft 0.6s ease-out forwards;
 }
 
-.page-footer .footer-logo {
-    width: 40px;
-    height: 30px;
-    border-radius: 4px;
-    object-fit: contain;
-    background: transparent;
-    padding: 0;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+.problema:nth-child(even) {
+    animation: slideInLeft 0.6s ease-out 0.1s forwards;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    body:not(.home-page) {
+        padding-top: 50px;
+        padding-bottom: 90px;
+    }
+
+    .page-header {
+        padding: 0.5rem 1rem;
+        min-height: 45px;
+    }
+
+    .chapter-header {
+        margin-bottom: 2rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .chapter-header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .chapter-header .chapter-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .page-footer .footer-content {
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 0.7rem;
+    }
+
+    /* Ajustes en la cuadrícula de problemas para pantallas más pequeñas */
+    .problemas-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 0.5rem;
+    }
+
+    .problema {
+        padding: 20px;
+        margin: 0 0.2rem;
+    }
+
+    .container {
+        padding: 1.5rem 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .problema h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero-header {
+        padding: 3rem 1rem;
+        min-height: auto;
+    }
+
+    .academy-logo {
+        width: min(520px, 85vw);
+    }
+
+    .author-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.25rem 1.75rem;
+        gap: 1rem;
+    }
+
+    .author-photo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .subjects-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .areas-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .contact-grid {
+        gap: 1.5rem;
+    }
+
+    .contact-item {
+        min-width: 200px;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body:not(.home-page) {
+        padding-top: 45px;
+        padding-bottom: 100px;
+    }
+
+    .page-header {
+        padding: 0.4rem 0.8rem;
+        min-height: 40px;
+    }
+
+    .chapter-header {
+        margin-bottom: 1.5rem;
+        padding: 1.2rem 0.8rem;
+    }
+
+    .chapter-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .chapter-header .chapter-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .page-footer {
+        height: 80px;
+        padding: 0.8rem 1rem;
+    }
+
+    .page-footer .footer-content {
+        gap: 0.3rem;
+        font-size: 0.65rem;
+    }
+
+    /* Ajustes adicionales para pantallas muy pequeñas */
+    .problema {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    code {
+        font-size: 0.8rem;
+        padding: 3px 6px;
+        word-break: break-word;
+    }
+
+    .hero-header {
+        padding: 2rem 0.75rem;
+    }
+
+    .academy-logo {
+        width: min(350px, 80vw);
+    }
+
+    .main-title {
+        font-size: 1.75rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .author-section {
+        padding: 1rem 1.25rem;
+    }
+
+    .author-photo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        gap: 1rem;
+    }
+
+    .contact-item {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .page-footer .footer-content {
+        flex-direction: column;
+        gap: 0.3rem;
+        text-align: center;
+        font-size: 0.7rem;
+    }
+
+    .page-footer {
+        height: 80px;
+    }
 }
