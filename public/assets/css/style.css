@@ -861,6 +861,66 @@ pre code {
 .contact-link:hover {
     transform: scale(1.05);
     text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+    color: #25D366;
+    text-shadow: 
+        0 0 5px #25D366,
+        0 0 10px #25D366,
+        0 0 15px #25D366,
+        0 0 20px #25D366;
+    animation: whatsappGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes whatsappGlow {
+    0% {
+        text-shadow: 
+            0 0 5px #25D366,
+            0 0 10px #25D366,
+            0 0 15px #25D366;
+        transform: scale(1.05);
+    }
+    100% {
+        text-shadow: 
+            0 0 8px #25D366,
+            0 0 16px #25D366,
+            0 0 24px #25D366,
+            0 0 32px #25D366;
+        transform: scale(1.08);
+    }
+}
+
+/* Efectos específicos para enlaces de WhatsApp en el footer */
+.footer-section a[href*="wa.me"] {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.footer-section a[href*="wa.me"]:hover {
+    color: #25D366;
+    text-shadow: 
+        0 0 5px #25D366,
+        0 0 10px #25D366,
+        0 0 15px #25D366,
+        0 0 20px #25D366;
+    transform: scale(1.1);
+    animation: whatsappPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes whatsappPulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 5px #25D366,
+            0 0 10px #25D366,
+            0 0 15px #25D366;
+    }
+    50% {
+        text-shadow: 
+            0 0 8px #25D366,
+            0 0 16px #25D366,
+            0 0 24px #25D366,
+            0 0 32px #25D366;
+    }
 }
 
 /* Footer principal */
